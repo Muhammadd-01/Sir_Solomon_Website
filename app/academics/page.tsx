@@ -111,8 +111,13 @@ export default function Academics() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-[600px] rounded-3xl overflow-hidden">
-                <Image src="/students-classroom-learning-engaged.jpg" alt="Students in classroom" fill className="object-cover" />
+              <div className="relative h-[600px] rounded-3xl overflow-hidden img-zoom">
+                <Image
+                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop"
+                  alt="Students in classroom"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -140,7 +145,7 @@ export default function Academics() {
               >
                 <div className="relative h-72 overflow-hidden">
                   <Image
-                    src={`/.jpg?height=288&width=300&query=${teacher.name} teacher portrait`}
+                    src={teacher.image || `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop`}
                     alt={teacher.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"

@@ -1,225 +1,115 @@
 # Sir Solomon's School Website
 
-A premium, production-ready school website built with Next.js 16, TypeScript, and shadcn/ui components. Fully responsive with smooth animations and excellent performance.
+A premium, modern, and responsive website for Sir Solomon's School, built with Next.js, Tailwind CSS, and Framer Motion. This project features a brilliant UI/UX with deep localization for Karachi, Pakistan.
 
-## 🚀 Features
+## 🌟 Features
 
-- **Pages**: Home, About, Academics, Admissions, Gallery, News, and Contact
-- **Responsive Design**: Mobile-first approach with Tailwind CSS v4
-- **Animations**: Smooth transitions, hover effects, and scroll animations using Framer Motion utilities
-- **Performance Optimized**: Next.js Image optimization, efficient CSS, minimal bundle
-- **Accessible**: Semantic HTML, ARIA attributes, keyboard navigation
-- **Theme System**: Easy customization via CSS variables in globals.css
-- **Component Library**: Built with shadcn/ui for consistent design
+*   **Premium UI/UX**: A visually stunning design with a rich green color palette, glassmorphism effects, and smooth animations.
+*   **Responsive Design**: Fully optimized for all devices, from mobile phones to large desktop screens.
+*   **Deep Localization**: Content tailored for Karachi, Pakistan, including currency (PKR), contact details, and cultural context.
+*   **Advanced Animations**:
+    *   **Entrance Animations**: `fadeInUp`, `slideInLeft`, `slideInRight`, `zoomIn`.
+    *   **Hover Effects**: `hover-tilt`, `hover-magnetic`, `hover-border-glow`, `img-zoom`.
+    *   **Page Transitions**: Smooth transitions between pages using `framer-motion`.
+    *   **Typing Effect**: Dynamic typing animation in the Hero section.
+*   **Interactive Elements**:
+    *   **Gallery**: Filterable image gallery with lightbox and masonry/grid view modes.
+    *   **Admissions**: Downloadable fee structure (PDF/Print) and interactive application form.
+    *   **Contact**: Functional contact form (frontend) and interactive map placeholder.
+*   **Performance Optimized**: Fast loading times with Next.js image optimization and efficient code splitting.
 
-## 📋 Getting Started
+## 🛠️ Tech Stack
+
+*   **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+*   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+*   **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/), [Tailwind Animate](https://github.com/jamiebuilds/tailwindcss-animate)
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **Fonts**: Inter (Sans), Poppins (Heading)
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ or pnpm 8+
-- Modern web browser
+*   Node.js 18.17 or later
+*   npm, yarn, or pnpm
 
 ### Installation
 
-1. **Download the project** from the Code Project interface
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/sir-solomon-website.git
+    cd sir-solomon-website
+    ```
 
-2. **Install dependencies** using the provided shadcn CLI command:
-\`\`\`bash
-npm install
-# or
-pnpm install
-\`\`\`
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-3. **Run the development server**:
-\`\`\`bash
-npm run dev
-# or
-pnpm dev
-\`\`\`
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
 
-4. **Open in browser**: Visit [http://localhost:3000](http://localhost:3000)
+4.  **Open your browser:**
+    Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 
 ## 📁 Project Structure
 
-\`\`\`
-sir-solomons-school/
-├── app/
-│   ├── layout.tsx              # Root layout
-│   ├── globals.css             # Global styles and theme variables
-│   ├── page.tsx                # Home page
-│   ├── about/
-│   │   └── page.tsx            # About page
-│   ├── academics/
-│   │   └── page.tsx            # Academics page
-│   ├── admissions/
-│   │   └── page.tsx            # Admissions page
-│   ├── gallery/
-│   │   └── page.tsx            # Gallery page
-│   ├── news/
-│   │   └── page.tsx            # News page
-│   └── contact/
-│       └── page.tsx            # Contact page
-├── components/
-│   ├── navigation.tsx          # Navbar component
-│   ├── footer.tsx              # Footer component
-│   ├── hero.tsx                # Hero section
-│   ├── stats.tsx               # Stats counter section
-│   ├── features.tsx            # Features section
-│   ├── testimonials.tsx        # Testimonials carousel
-│   └── news-preview.tsx        # News preview on home
-├── lib/
-│   └── constants.ts            # Configuration and dummy data
-├── public/
-│   └── [static files]
-├── package.json
-├── tsconfig.json
-└── next.config.mjs
-\`\`\`
+```
+├── app/                  # Next.js App Router directory
+│   ├── about/            # About page
+│   ├── academics/        # Academics page
+│   ├── admissions/       # Admissions page
+│   ├── contact/          # Contact page
+│   ├── gallery/          # Gallery page
+│   ├── globals.css       # Global styles and Tailwind directives
+│   ├── layout.tsx        # Root layout
+│   ├── page.tsx          # Home page
+│   └── template.tsx      # Page transition template
+├── components/           # Reusable UI components
+│   ├── ui/               # shadcn/ui primitive components
+│   ├── features.tsx      # Features section component
+│   ├── footer.tsx        # Footer component
+│   ├── hero.tsx          # Hero section component
+│   └── navigation.tsx    # Navigation bar component
+├── lib/                  # Utility functions and constants
+│   ├── constants.ts      # Site-wide constants (School info, fees, etc.)
+│   └── utils.ts          # Helper functions
+└── public/               # Static assets (images, fonts, etc.)
+```
 
-## 🎨 Customization Guide
+## 🎨 Customization
 
-### Changing Colors & Theme
+### Colors
+The color palette is defined in `app/globals.css`. The primary brand color is a vibrant green (`#A6FF57`) combined with a dark charcoal (`#11110F`) for contrast.
 
-Edit `app/globals.css` to update the color theme:
+### Content
+Most site content can be easily updated in `lib/constants.ts`. This includes:
+*   `SCHOOL_INFO`: Name, address, phone, email, social links.
+*   `NAVIGATION_ITEMS`: Menu links.
+*   `FEES`: Fee structure data.
+*   `TEACHERS`: Faculty information.
+*   `PROGRAMS`: Academic programs.
 
-\`\`\`css
-@theme inline {
-  --color-background: #ffffff;      /* Change background color */
-  --color-primary: #a6ff57;         /* Change primary/accent color */
-  --color-secondary: #11110f;       /* Change text/dark color */
-  --color-accent: #8b34b9;          /* Change accent color */
-}
-\`\`\`
+### Images
+Images are sourced from Unsplash for demonstration purposes. To use your own images:
+1.  Place your images in the `public/` directory.
+2.  Update the `src` paths in the respective components (e.g., `app/page.tsx`, `app/about/page.tsx`).
 
-### Adding Your Logo
+## 📄 License
 
-1. Replace the "SS" placeholder in `components/navigation.tsx` with your logo
-2. Update the logo in the footer similarly
-3. For image logos, use Next.js `<Image>` component
-
-### Updating School Information
-
-Edit `lib/constants.ts` to update:
-- School name and tagline
-- Contact information
-- Mission statement
-- Features, programs, teachers
-- News articles, gallery images
-- Testimonials and fees
-
-Example:
-\`\`\`typescript
-export const SCHOOL_INFO = {
-  name: "Your School Name",
-  tagline: "Your tagline here",
-  email: "your@email.com",
-  phone: "+1 (555) 123-4567",
-  address: "Your address",
-};
-\`\`\`
-
-### Adding Teachers
-
-In `lib/constants.ts`, add to the `TEACHERS` array:
-\`\`\`typescript
-{
-  id: 5,
-  name: "Teacher Name",
-  subject: "Subject",
-  bio: "Bio text",
-  image: "/placeholder.svg?height=300&width=300",
-}
-\`\`\`
-
-### Adding News Articles
-
-In `lib/constants.ts`, add to the `NEWS_ARTICLES` array:
-\`\`\`typescript
-{
-  id: 4,
-  title: "Article Title",
-  excerpt: "Short description",
-  date: "Month Year",
-  category: "Events/Sports/Facilities",
-  image: "/placeholder.svg?height=200&width=400",
-}
-\`\`\`
-
-### Adding Gallery Images
-
-In `lib/constants.ts`, add to the `GALLERY_IMAGES` array:
-\`\`\`typescript
-{
-  id: 7,
-  title: "Image Title",
-  image: "/placeholder.svg?height=400&width=600",
-}
-\`\`\`
-
-## 🌐 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository at [vercel.com](https://vercel.com)
-3. Vercel automatically detects Next.js and deploys
-
-### Deploy to Netlify
-
-1. Install Netlify CLI: `npm install -g netlify-cli`
-2. Run: `netlify deploy --prod`
-
-### Deploy to Static Hosting (GitHub Pages, AWS S3)
-
-Build static export:
-\`\`\`bash
-npm run build
-\`\`\`
-
-The `out/` folder contains static files ready for deployment.
-
-## 📱 Performance Tips
-
-- Images are automatically optimized with Next.js Image component
-- CSS is minified and bundled
-- Lazy loading on images improves initial load time
-- Use production builds for deployment: `npm run build`
-
-## 🔧 Advanced Features
-
-### Adding Animations
-
-Components already include smooth animations. To add more, use Tailwind animation utilities or add custom animations in `globals.css`.
-
-### Adding Dark Mode
-
-Extend the `@theme` block in `globals.css` with dark mode variants using Tailwind CSS v4.
-
-### Adding Search Functionality
-
-Implement a search component in the News page by adding state management with useState hooks.
-
-## 📞 Support & Maintenance
-
-- Update content regularly in `lib/constants.ts`
-- Keep dependencies updated: `npm update`
-- Test on multiple devices before deploying
-- Monitor performance using Lighthouse
-
-## 📝 License
-
-This project is provided as-is for educational and commercial use.
-
-## 🎯 Next Steps
-
-1. Customize colors and branding
-2. Update school information
-3. Add real images (replace placeholders)
-4. Connect to a backend for dynamic content (optional)
-5. Set up email notifications for contact forms
-6. Deploy to production
+This project is licensed under the MIT License.
 
 ---
 
-**Last Updated**: November 2024
-**Version**: 1.0.0
+**Sir Solomon's School** - *Nurturing Future Leaders Since 1999*

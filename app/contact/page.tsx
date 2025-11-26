@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Mail, Phone, MapPin, Clock, Send, Users, MessageSquare, HelpCircle } from "lucide-react"
 import { SCHOOL_INFO } from "@/lib/constants"
 
@@ -31,17 +32,27 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Fixed gradient to use proper Tailwind syntax */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-white via-[#f9f9f7] to-[#e8ffe0] overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+            alt="Contact Us"
+            fill
+            className="object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-[#e8ffe0]/50" />
+        </div>
+
         {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-72 h-72 bg-[#A6FF57]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#A6FF57]/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-[#A6FF57]/20 rounded-full blur-3xl z-0" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#A6FF57]/10 rounded-full blur-3xl z-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-block px-4 py-2 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-medium mb-6">
+          <span className="inline-block px-4 py-2 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-medium mb-6 animate-fadeInDown">
             We're Here to Help
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#11110F] mb-6 text-balance">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#11110F] mb-6 text-balance animate-fadeInUp">
             Get In{" "}
             <span className="text-[#11110F] relative">
               Touch
@@ -50,7 +61,7 @@ export default function Contact() {
               </svg>
             </span>
           </h1>
-          <p className="text-xl text-[#666] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#666] max-w-2xl mx-auto leading-relaxed animate-fadeInUp animate-delay-200">
             Have questions about admissions, academics, or anything else? Our team is ready to assist you every step of
             the way.
           </p>
@@ -250,13 +261,28 @@ export default function Contact() {
               Located in the heart of the city, our campus is easily accessible by public transportation and car.
             </p>
           </div>
-          <div className="w-full h-96 bg-gradient-to-br from-[#f9f9f7] to-[#e8ffe0] rounded-3xl border border-[#e5e5e5] flex items-center justify-center overflow-hidden">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-[#A6FF57] rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="text-[#11110F]" size={40} />
+          <div className="w-full h-96 rounded-3xl border border-[#e5e5e5] overflow-hidden">
+            <div className="h-full min-h-[400px] bg-[#f5f5f5] flex items-center justify-center relative overflow-hidden group">
+              <Image
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1748&auto=format&fit=crop"
+                alt="Map Location"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl transform transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#A6FF57] rounded-full flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-[#11110F]" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#11110F]">Sir Solomon's School</p>
+                      <p className="text-xs text-[#666]">Clifton, Karachi</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-[#666] font-medium">Interactive Map</p>
-              <p className="text-[#999] text-sm mt-1">Google Maps integration placeholder</p>
             </div>
           </div>
         </div>

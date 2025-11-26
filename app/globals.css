@@ -3,6 +3,8 @@
 
 /* Force light mode variables */
 :root {
+  color-scheme: light;
+  /* Enforce light mode at browser level */
   --background: #ffffff;
   --foreground: #11110f;
   --card: #ffffff;

@@ -13,24 +13,114 @@ const GALLERY_CATEGORIES = [
 ]
 
 const GALLERY_ITEMS = [
-  { id: 1, title: "Main Building", category: "campus", query: "modern school main building architecture glass" },
-  { id: 2, title: "Library", category: "campus", query: "modern school library interior books shelves" },
-  { id: 3, title: "Science Lab", category: "academics", query: "school science laboratory students experiment" },
-  { id: 4, title: "Sports Day", category: "sports", query: "school sports day students athletics running" },
-  { id: 5, title: "Annual Function", category: "events", query: "school annual day stage performance dance" },
-  { id: 6, title: "Computer Lab", category: "academics", query: "modern computer lab students coding programming" },
-  { id: 7, title: "Playground", category: "sports", query: "school playground outdoor green field students" },
-  { id: 8, title: "Art Exhibition", category: "events", query: "school art exhibition student paintings creative" },
-  { id: 9, title: "Auditorium", category: "campus", query: "school auditorium stage modern theater seats" },
-  { id: 10, title: "Cafeteria", category: "campus", query: "school cafeteria students lunch modern interior" },
-  { id: 11, title: "Basketball Court", category: "sports", query: "school basketball court game students playing" },
-  { id: 12, title: "Science Fair", category: "events", query: "school science fair projects students innovation" },
-  { id: 13, title: "Music Room", category: "academics", query: "school music room instruments piano students" },
-  { id: 14, title: "Swimming Pool", category: "sports", query: "school swimming pool indoor olympic students" },
-  { id: 15, title: "Graduation Day", category: "events", query: "school graduation ceremony students celebration" },
-  { id: 16, title: "Chemistry Lab", category: "academics", query: "school chemistry lab students beakers experiment" },
-  { id: 17, title: "Football Field", category: "sports", query: "school football field green grass students playing" },
-  { id: 18, title: "Cultural Festival", category: "events", query: "school cultural festival dance music celebration" },
+  {
+    id: 1,
+    title: "Main Building",
+    category: "campus",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    title: "Library",
+    category: "campus",
+    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 3,
+    title: "Science Lab",
+    category: "academics",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 4,
+    title: "Sports Day",
+    category: "sports",
+    image: "https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
+    id: 5,
+    title: "Annual Function",
+    category: "events",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 6,
+    title: "Computer Lab",
+    category: "academics",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 7,
+    title: "Playground",
+    category: "sports",
+    image: "https://images.unsplash.com/photo-1505249961667-1779183dca9a?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
+    id: 8,
+    title: "Art Exhibition",
+    category: "events",
+    image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2080&auto=format&fit=crop"
+  },
+  {
+    id: 9,
+    title: "Auditorium",
+    category: "campus",
+    image: "https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 10,
+    title: "Cafeteria",
+    category: "campus",
+    image: "https://images.unsplash.com/photo-1565514020176-dbf2277cc16d?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 11,
+    title: "Basketball Court",
+    category: "sports",
+    image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=2069&auto=format&fit=crop"
+  },
+  {
+    id: 12,
+    title: "Science Fair",
+    category: "events",
+    image: "https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
+    id: 13,
+    title: "Music Room",
+    category: "academics",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 14,
+    title: "Swimming Pool",
+    category: "sports",
+    image: "https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
+    id: 15,
+    title: "Graduation Day",
+    category: "events",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 16,
+    title: "Chemistry Lab",
+    category: "academics",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 17,
+    title: "Football Field",
+    category: "sports",
+    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 18,
+    title: "Cultural Festival",
+    category: "events",
+    image: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop"
+  },
 ]
 
 export default function Gallery() {
@@ -92,8 +182,14 @@ export default function Gallery() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "Campus Tour 2024", query: "school campus tour walkthrough modern building" },
-              { title: "Annual Day Highlights", query: "school annual day celebration performance stage" },
+              {
+                title: "Campus Tour 2024",
+                image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop"
+              },
+              {
+                title: "Annual Day Highlights",
+                image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop"
+              },
             ].map((video) => (
               <div
                 key={video.title}
@@ -101,7 +197,7 @@ export default function Gallery() {
               >
                 <div className="relative h-56 sm:h-72">
                   <Image
-                    src={`/.jpg?height=288&width=640&query=${video.query}`}
+                    src={video.image}
                     alt={video.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -132,11 +228,10 @@ export default function Gallery() {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
-                    selectedCategory === category.id
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${selectedCategory === category.id
                       ? "bg-[#A6FF57] text-[#11110F] shadow-lg"
                       : "bg-[#f5f5f5] text-[#666666] hover:bg-[#e5e5e5] hover:scale-105"
-                  }`}
+                    }`}
                 >
                   {category.label}
                 </button>
@@ -147,18 +242,16 @@ export default function Gallery() {
             <div className="flex gap-2">
               <button
                 onClick={() => setViewMode("grid")}
-                className={`p-2.5 sm:p-3 rounded-xl transition-all duration-300 ${
-                  viewMode === "grid" ? "bg-[#11110F] text-white" : "bg-[#f5f5f5] text-[#666666] hover:bg-[#e5e5e5]"
-                }`}
+                className={`p-2.5 sm:p-3 rounded-xl transition-all duration-300 ${viewMode === "grid" ? "bg-[#11110F] text-white" : "bg-[#f5f5f5] text-[#666666] hover:bg-[#e5e5e5]"
+                  }`}
                 aria-label="Grid view"
               >
                 <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={() => setViewMode("masonry")}
-                className={`p-2.5 sm:p-3 rounded-xl transition-all duration-300 ${
-                  viewMode === "masonry" ? "bg-[#11110F] text-white" : "bg-[#f5f5f5] text-[#666666] hover:bg-[#e5e5e5]"
-                }`}
+                className={`p-2.5 sm:p-3 rounded-xl transition-all duration-300 ${viewMode === "masonry" ? "bg-[#11110F] text-white" : "bg-[#f5f5f5] text-[#666666] hover:bg-[#e5e5e5]"
+                  }`}
                 aria-label="Masonry view"
               >
                 <LayoutGrid className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -182,14 +275,13 @@ export default function Gallery() {
               <div
                 key={item.id}
                 onClick={() => setSelectedImage(item)}
-                className={`group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:shadow-2xl card-hover ${
-                  viewMode === "masonry"
+                className={`group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:shadow-2xl card-hover ${viewMode === "masonry"
                     ? `break-inside-avoid ${index % 3 === 0 ? "h-72 sm:h-80" : index % 3 === 1 ? "h-56 sm:h-64" : "h-64 sm:h-72"}`
                     : "h-56 sm:h-72"
-                }`}
+                  }`}
               >
                 <Image
-                  src={`/.jpg?height=400&width=600&query=${item.query}`}
+                  src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -260,7 +352,7 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={`/.jpg?height=800&width=1200&query=${selectedImage.query}`}
+              src={selectedImage.image}
               alt={selectedImage.title}
               width={1200}
               height={800}

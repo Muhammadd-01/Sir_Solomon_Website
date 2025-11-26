@@ -82,8 +82,13 @@ export default function About() {
               </div>
             </div>
             <div className="relative order-1 lg:order-2">
-              <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image src="/historic-school-building-architecture-vintage-educ.jpg" alt="School History" fill className="object-cover" />
+              <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl img-zoom">
+                <Image
+                  src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1974&auto=format&fit=crop"
+                  alt="School History"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-[#11110F] text-white p-6 sm:p-8 rounded-2xl shadow-xl">
                 <p className="text-4xl sm:text-5xl font-bold text-[#A6FF57]">25+</p>
@@ -110,7 +115,7 @@ export default function About() {
           <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer max-w-4xl mx-auto">
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
               <Image
-                src="/school-campus-aerial-view-modern-building-green.jpg"
+                src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop"
                 alt="Campus Tour Video"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -208,9 +213,9 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden">
+              <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden img-zoom">
                 <Image
-                  src="/professional-headmaster-portrait-suit-office-educa.jpg"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
                   alt="Dr. James Smith - Headmaster"
                   fill
                   className="object-cover"
@@ -263,7 +268,7 @@ export default function About() {
               >
                 <div className="relative h-64 sm:h-72 overflow-hidden">
                   <Image
-                    src={`/.jpg?height=288&width=300&query=${teacher.name} teacher portrait professional education`}
+                    src={teacher.image || `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop`}
                     alt={teacher.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -334,32 +339,32 @@ export default function About() {
               {
                 title: "Smart Classrooms",
                 desc: "Interactive boards and digital learning tools in every classroom",
-                query: "modern smart classroom interactive whiteboard students",
+                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
               },
               {
                 title: "Science Labs",
                 desc: "Fully equipped Physics, Chemistry, and Biology laboratories",
-                query: "school science laboratory equipment modern",
+                image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop",
               },
               {
                 title: "Computer Center",
                 desc: "200+ computers with high-speed internet and coding facilities",
-                query: "modern computer lab students programming",
+                image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
               },
               {
                 title: "Library",
                 desc: "50,000+ books, digital resources, and quiet study spaces",
-                query: "school library books reading students modern",
+                image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop",
               },
               {
                 title: "Sports Complex",
                 desc: "Indoor stadium, swimming pool, and outdoor sports fields",
-                query: "school sports complex stadium swimming pool",
+                image: "https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?q=80&w=1974&auto=format&fit=crop",
               },
               {
                 title: "Auditorium",
                 desc: "1000-seat capacity for events, performances, and assemblies",
-                query: "school auditorium stage modern theater",
+                image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop",
               },
             ].map((facility, index) => (
               <div
@@ -367,7 +372,7 @@ export default function About() {
                 className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden cursor-pointer"
               >
                 <Image
-                  src={`/.jpg?height=288&width=400&query=${facility.query}`}
+                  src={facility.image}
                   alt={facility.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

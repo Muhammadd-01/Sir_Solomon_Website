@@ -144,12 +144,12 @@ export const TESTIMONIALS = [
 ]
 
 export const FEES = [
-  { class: "Nursery", semester1: 45000, semester2: 45000 },
-  { class: "Primary (I-III)", semester1: 55000, semester2: 55000 },
-  { class: "Elementary (IV-VI)", semester1: 65000, semester2: 65000 },
-  { class: "Middle (VII-VIII)", semester1: 75000, semester2: 75000 },
-  { class: "Senior (IX-X)", semester1: 85000, semester2: 85000 },
-  { class: "Higher Secondary (XI-XII)", semester1: 95000, semester2: 95000 },
+  { class: "Nursery", semester1: 150000, semester2: 150000 },
+  { class: "Primary (I-III)", semester1: 180000, semester2: 180000 },
+  { class: "Elementary (IV-VI)", semester1: 200000, semester2: 200000 },
+  { class: "Middle (VII-VIII)", semester1: 220000, semester2: 220000 },
+  { class: "Senior (IX-X)", semester1: 250000, semester2: 250000 },
+  { class: "Higher Secondary (XI-XII)", semester1: 280000, semester2: 280000 },
 ]
 
 export const PROGRAMS = [

@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import Image from "next/image"
 import { Calendar, FileText, Users, CheckCircle, Download, Phone, Mail, ArrowRight } from "lucide-react"
-import { FEES } from "@/lib/constants"
+import { FEES, SCHOOL_INFO } from "@/lib/constants"
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -21,6 +21,24 @@ export default function Admissions() {
     console.log("Form submitted:", formData)
     alert("Thank you for your interest! We will contact you within 24 hours.")
     setFormData({ parentName: "", email: "", phone: "", studentName: "", studentClass: "", message: "" })
+  }
+
+  const handleDownloadFees = async () => {
+    // Dynamically import html2pdf.js to avoid server-side issues
+    const html2pdf = (await import("html2pdf.js")).default
+
+    const element = document.getElementById("fee-structure")
+    if (!element) return
+
+    const opt = {
+      margin: 1,
+      filename: "Sir_Solomons_Fee_Structure_2025-26.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    } as any
+
+    html2pdf().set(opt).from(element).save()
   }
 
   return (
@@ -144,9 +162,8 @@ export default function Admissions() {
             ].map((item) => (
               <div
                 key={item.event}
-                className={`flex gap-4 p-6 rounded-2xl border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
-                  item.status === "active" ? "bg-[#A6FF57] border-[#A6FF57]" : "bg-white border-[#e5e5e5]"
-                }`}
+                className={`flex gap-4 p-6 rounded-2xl border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${item.status === "active" ? "bg-[#A6FF57] border-[#A6FF57]" : "bg-white border-[#e5e5e5]"
+                  }`}
               >
                 <Calendar
                   className={`w-6 h-6 flex-shrink-0 ${item.status === "active" ? "text-[#11110F]" : "text-[#A6FF57]"}`}
@@ -164,7 +181,7 @@ export default function Admissions() {
       </section>
 
       {/* Fee Structure */}
-      <section className="py-24 bg-white">
+      <section id="fee-structure" className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
@@ -192,10 +209,10 @@ export default function Admissions() {
                       className={`border-b border-[#e5e5e5] transition-colors duration-300 hover:bg-white ${index % 2 === 0 ? "bg-[#f5f5f5]" : "bg-white"}`}
                     >
                       <td className="p-5 font-semibold text-[#11110F]">{fee.class}</td>
-                      <td className="p-5 text-right text-[#666666]">₹{fee.semester1.toLocaleString()}</td>
-                      <td className="p-5 text-right text-[#666666]">₹{fee.semester2.toLocaleString()}</td>
+                      <td className="p-5 text-right text-[#666666]">Rs. {fee.semester1.toLocaleString()}</td>
+                      <td className="p-5 text-right text-[#666666]">Rs. {fee.semester2.toLocaleString()}</td>
                       <td className="p-5 text-right font-bold text-[#A6FF57]">
-                        ₹{(fee.semester1 + fee.semester2).toLocaleString()}
+                        Rs. {(fee.semester1 + fee.semester2).toLocaleString()}
                       </td>
                     </tr>
                   ))}
@@ -205,7 +222,10 @@ export default function Admissions() {
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center justify-center gap-2 bg-[#11110F] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#333]">
+            <button
+              onClick={handleDownloadFees}
+              className="inline-flex items-center justify-center gap-2 bg-[#11110F] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#333]"
+            >
               <Download className="w-5 h-5" />
               Download Fee Details
             </button>
@@ -241,8 +261,13 @@ export default function Admissions() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-[400px] rounded-3xl overflow-hidden">
-              <Image src="/happy-students-scholarship-winners-celebration.jpg" alt="Scholarship Winners" fill className="object-cover" />
+            <div className="relative h-[400px] rounded-3xl overflow-hidden img-zoom">
+              <Image
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+                alt="Scholarship Winners"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -305,7 +330,7 @@ export default function Admissions() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-5 py-4 border border-[#e5e5e5] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A6FF57] focus:border-transparent transition-all duration-300"
-                  placeholder="+91 98765 43210"
+                  placeholder="+92 300 1234567"
                 />
               </div>
             </div>
@@ -358,18 +383,18 @@ export default function Admissions() {
             <p className="text-[#11110F]/70 mb-8 text-lg">Our admissions team is here to help you</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="tel:+15551234567"
+                href={`tel:${SCHOOL_INFO.phone}`}
                 className="inline-flex items-center justify-center gap-3 bg-[#11110F] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#333]"
               >
                 <Phone className="w-5 h-5" />
-                +1 (555) 123-4567
+                {SCHOOL_INFO.phone}
               </a>
               <a
-                href="mailto:admissions@sirsolomon.edu"
+                href={`mailto:${SCHOOL_INFO.email}`}
                 className="inline-flex items-center justify-center gap-3 bg-white text-[#11110F] px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg"
               >
                 <Mail className="w-5 h-5" />
-                admissions@sirsolomon.edu
+                {SCHOOL_INFO.email}
               </a>
             </div>
           </div>
