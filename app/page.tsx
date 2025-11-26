@@ -9,6 +9,14 @@ import { CheckCircle, ArrowRight, Play, Star, Sparkles } from "lucide-react"
 export default function Home() {
   return (
     <>
+    
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#11110F",
+      }}
+      className="light-mode"
+    >
       <Hero />
       <Stats />
       <Features />
@@ -150,7 +158,7 @@ export default function Home() {
       </section>
 
       <Testimonials />
-
+</div>
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-[#A6FF57] to-[#8fdb44] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
