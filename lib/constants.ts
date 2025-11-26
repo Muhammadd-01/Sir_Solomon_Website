@@ -9,7 +9,7 @@ export const NAVIGATION_ITEMS = [
 ]
 
 export const SCHOOL_INFO = {
-  name: "Sir Solomon's Secondary School",
+  name: "Sir Solomon's",
   tagline: "Excellence in Education, Character in Action",
   mission: "Empowering students with knowledge, skills, and values for a better future",
   email: "info@sirsolomon.edu",
