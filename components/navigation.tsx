@@ -11,6 +11,9 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
+  // Filter out News item
+  const filteredNavItems = NAVIGATION_ITEMS.filter(item => item.label !== "News")
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -25,11 +28,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`sticky top-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-white/95 backdrop-blur-lg shadow-lg border-b border-[#e5e5e5]"
           : "bg-white border-b border-[#e5e5e5]"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -46,15 +48,14 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {NAVIGATION_ITEMS.map((item) => {
+            {filteredNavItems.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2.5 rounded-xl font-medium transition-all duration-300 relative group ${
-                    isActive ? "text-[#11110F] bg-[#A6FF57]" : "text-[#11110F] hover:bg-[#f5f5f5]"
-                  }`}
+                  className={`px-4 py-2.5 rounded-xl font-medium transition-all duration-300 relative group ${isActive ? "text-[#11110F] bg-[#A6FF57]" : "text-[#11110F] hover:bg-[#f5f5f5]"
+                    }`}
                 >
                   {item.label}
                   {!isActive && (
@@ -96,20 +97,18 @@ export default function Navigation() {
 
         {/* Mobile Navigation - Enhanced with theme colors */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="pt-4 space-y-2">
-            {NAVIGATION_ITEMS.map((item, index) => {
+            {filteredNavItems.map((item, index) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
-                    isActive ? "bg-[#A6FF57] text-[#11110F]" : "text-[#11110F] hover:bg-[#f5f5f5] hover:translate-x-2"
-                  }`}
+                  className={`block py-3 px-4 rounded-xl font-medium transition-all duration-300 ${isActive ? "bg-[#A6FF57] text-[#11110F]" : "text-[#11110F] hover:bg-[#f5f5f5] hover:translate-x-2"
+                    }`}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {item.label}

@@ -4,7 +4,6 @@ export const NAVIGATION_ITEMS = [
   { label: "Academics", href: "/academics" },
   { label: "Admissions", href: "/admissions" },
   { label: "Gallery", href: "/gallery" },
-  { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -12,9 +11,9 @@ export const SCHOOL_INFO = {
   name: "Sir Solomon's",
   tagline: "Excellence in Education, Character in Action",
   mission: "Empowering students with knowledge, skills, and values for a better future",
-  email: "info@sirsolomon.edu",
-  phone: "+1 (555) 123-4567",
-  address: "123 Education Lane, Knowledge City, KC 12345",
+  email: "info@sirsolomon.edu.pk",
+  phone: "+92 (21) 3456-7890",
+  address: "Plot 123, Block 5, Clifton, Karachi, Pakistan",
 }
 
 export const FEATURES = [
@@ -60,7 +59,7 @@ export const STATS = [
 export const TEACHERS = [
   {
     id: 1,
-    name: "Dr. Sarah Johnson",
+    name: "Dr. Sarah Ahmed",
     subject: "Mathematics",
     bio: "Ph.D. in Mathematics, 12 years experience",
     image: "/professional-woman-teacher-mathematics.jpg",
@@ -74,7 +73,7 @@ export const TEACHERS = [
   },
   {
     id: 3,
-    name: "Emma Williams",
+    name: "Fatima Ali",
     subject: "English Literature",
     bio: "M.A. English, passionate educator",
     image: "/professional-woman-teacher-english.jpg",
@@ -88,32 +87,7 @@ export const TEACHERS = [
   },
 ]
 
-export const NEWS_ARTICLES = [
-  {
-    id: 1,
-    title: "Annual Science Fair 2024 Success",
-    excerpt: "Our students showcase innovative projects at the annual science fair",
-    date: "November 2024",
-    category: "Events",
-    image: "/science-fair-students-projects.jpg",
-  },
-  {
-    id: 2,
-    title: "Sports Day Champions Announced",
-    excerpt: "Exciting competitions and records broken during the annual sports day",
-    date: "October 2024",
-    category: "Sports",
-    image: "/school-sports-day-competition.jpg",
-  },
-  {
-    id: 3,
-    title: "New STEM Lab Inauguration",
-    excerpt: "State-of-the-art STEM laboratory opens for student research",
-    date: "September 2024",
-    category: "Facilities",
-    image: "/modern-computer-lab-classroom.jpg",
-  },
-]
+export const NEWS_ARTICLES = []
 
 export const GALLERY_IMAGES = [
   {
@@ -156,13 +130,13 @@ export const TESTIMONIALS = [
     avatar: "/male-avatar-professional.jpg",
   },
   {
-    name: "Priya Sharma",
+    name: "Ayesha Khan",
     role: "Student",
     quote: "The teachers are amazing and the facilities are world-class. Proud to be a Solomon student!",
     avatar: "/female-avatar-student.jpg",
   },
   {
-    name: "Aditya Kumar",
+    name: "Bilal Ahmed",
     role: "Alumni",
     quote: "The education I received prepared me perfectly for university. Highly recommend!",
     avatar: "/male-avatar-young-professional.jpg",
@@ -201,12 +175,12 @@ export const PROGRAMS = [
   },
   {
     title: "Secondary Board",
-    description: "CBSE board preparation for Classes IX-X",
+    description: "Matric/O-Level preparation for Classes IX-X",
     grades: "Classes IX-X",
   },
   {
     title: "Senior Secondary",
-    description: "Science, Commerce, and Humanities streams for Classes XI-XII",
+    description: "Intermediate/A-Level Science, Commerce, and Humanities streams",
     grades: "Classes XI-XII",
   },
 ]
