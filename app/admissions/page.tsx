@@ -222,13 +222,13 @@ export default function Admissions() {
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+            {/* <button
               onClick={handleDownloadFees}
               className="inline-flex items-center justify-center gap-2 bg-[#11110F] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#333]"
             >
               <Download className="w-5 h-5" />
               Download Fee Details
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
