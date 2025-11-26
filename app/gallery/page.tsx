@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { X, ChevronLeft, ChevronRight, Grid, LayoutGrid, Play } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -38,32 +38,19 @@ export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedImage, setSelectedImage] = useState<(typeof GALLERY_ITEMS)[0] | null>(null)
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("grid")
-  const [prevCategory, setPrevCategory] = useState("all")
 
-  const filteredItems =
-    selectedCategory === "all"
-      ? GALLERY_ITEMS
-      : GALLERY_ITEMS.filter((item) => item.category === selectedCategory)
-
-  // Trigger re-animation when category changes
-  useEffect(() => {
-    if (selectedCategory !== prevCategory) {
-      setPrevCategory(selectedCategory)
-    }
-  }, [selectedCategory, prevCategory])
+  const filteredItems = selectedCategory === "all"
+    ? GALLERY_ITEMS
+    : GALLERY_ITEMS.filter((item) => item.category === selectedCategory)
 
   const currentIndex = selectedImage ? filteredItems.findIndex((item) => item.id === selectedImage.id) : -1
 
-  const handlePrev = () => {
-    if (currentIndex > 0) setSelectedImage(filteredItems[currentIndex - 1])
-  }
-
-  const handleNext = () => {
-    if (currentIndex < filteredItems.length - 1) setSelectedImage(filteredItems[currentIndex + 1])
-  }
+  const handlePrev = () => currentIndex > 0 && setSelectedImage(filteredItems[currentIndex - 1])
+  const handleNext = () => currentIndex < filteredItems.length - 1 && setSelectedImage(filteredItems[currentIndex + 1])
 
   return (
     <div className="min-h-screen bg-white">
+
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-white via-[#f9f9f7] to-[#e8ffe0] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(#11110F 1px, transparent 1px), linear-gradient(90deg, #11110F 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
@@ -71,27 +58,13 @@ export default function Gallery() {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#A6FF57]/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-6"
-          >
+          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-6">
             Gallery
           </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#11110F] mb-6"
-          >
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#11110F] mb-6">
             Campus <span className="text-[#A6FF57]">Moments</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto"
-          >
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto">
             Explore our vibrant campus life, events, and memorable moments captured through the lens
           </motion.p>
         </div>
@@ -100,12 +73,7 @@ export default function Gallery() {
       {/* Video Highlights */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#11110F] mb-2">Video Highlights</h2>
             <p className="text-[#666666]">Watch our campus come to life</p>
           </motion.div>
@@ -120,7 +88,7 @@ export default function Gallery() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
+                transition={{ delay: i * 0.1 }}
                 className="relative rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer"
               >
                 <div className="relative h-56 sm:h-72">
@@ -141,61 +109,47 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* SMOOTH FILTER BAR */}
+      {/* Filter Bar */}
       <section className="py-6 sm:py-8 sticky top-20 bg-white/95 backdrop-blur-xl z-30 border-y border-[#e5e5e5]/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
             <div className="flex flex-wrap gap-3 justify-center">
               {GALLERY_CATEGORIES.map((category) => (
-                <motion.button
+                <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative overflow-hidden px-6 py-3 rounded-2xl font-bold text-sm md:text-base transition-all duration-500"
-                  initial={false}
+                  className="relative overflow-hidden px-6 py-3 rounded-2xl font-bold text-sm md:text-base transition-all duration-300"
                 >
                   <span className={`relative z-10 ${selectedCategory === category.id ? "text-[#11110F]" : "text-[#666]"}`}>
                     {category.label}
                   </span>
-
-                  {/* Active Background with Smooth Expand */}
                   {selectedCategory === category.id && (
                     <motion.div
                       layoutId="activeFilter"
                       className="absolute inset-0 bg-[#A6FF57] rounded-2xl"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
                   )}
-
-                  {/* Hover Glow */}
-                  <motion.div
-                    className="absolute inset-0 bg-[#A6FF57]/30] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  />
-                </motion.button>
+                </button>
               ))}
             </div>
 
-            {/* View Mode Toggle */}
             <div className="flex gap-3">
               {["grid", "masonry"].map((mode) => (
-                <motion.button
+                <button
                   key={mode}
                   onClick={() => setViewMode(mode as any)}
-                  whileTap={{ scale: 0.9 }}
                   className={`p-3 rounded-xl transition-all duration-300 ${viewMode === mode ? "bg-[#11110F] text-white shadow-lg" : "bg-[#f5f5f5] text-[#666] hover:bg-[#e5e5e5]"}`}
                 >
                   {mode === "grid" ? <Grid className="w-5 h-5" /> : <LayoutGrid className="w-5 h-5" />}
-                </motion.button>
+                </button>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* GALLERY GRID WITH STAGGERED ANIMATION */}
+      {/* GALLERY GRID WITH SMOOTH CARD ANIMATION ON FILTER CHANGE */}
       <section className="py-12 sm:py-20 bg-gradient-to-b from-white to-[#f9f9f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
@@ -204,25 +158,30 @@ export default function Gallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className={viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" : "columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"}
+              transition={{ duration: 0.3 }}
+              className={viewMode === "grid" 
+                ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" 
+                : "columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+              }
             >
               {filteredItems.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  layout
-                  initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                  layoutId={`card-${item.id}`}
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9, y: -60 }}
+                  exit={{ opacity: 0, y: -30, scale: 0.9 }}
                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.05,
-                    ease: [0.22, 1, 0.36, 1],
+                    duration: 0.5,
+                    delay: index * 0.03,
+                    ease: [0.2, 0.8, 0.2, 1]
                   }}
                   onClick={() => setSelectedImage(item)}
-                  className={`group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-700 ${
-                    viewMode === "masonry" ? "break-inside-avoid" : ""
-                  } ${viewMode === "masonry" && (index % 4 === 0 || index % 4 === 3) ? "h-80" : "h-64"}`}
+                  className={`group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ${
+                    viewMode === "masonry" ? "break-inside-avoid mb-6" : ""
+                  } h-64 sm:h-72 lg:h-80`}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <Image
                     src={item.image}
@@ -231,35 +190,26 @@ export default function Gallery() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#11110F]/90 via-[#11110F]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-700"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                  >
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
                     <span className="inline-block px-4 py-1.5 bg-[#A6FF57] text-[#11110F] text-xs font-bold rounded-full mb-3">
                       {item.category.toUpperCase()}
                     </span>
                     <h3 className="text-white font-bold text-lg md:text-xl">{item.title}</h3>
-                  </motion.div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
 
           {filteredItems.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-32"
-            >
+            <div className="text-center py-32">
               <p className="text-[#666] text-xl">No images found in this category yet</p>
-            </motion.div>
+            </div>
           )}
         </div>
       </section>
 
-      {/* LIGHTBOX WITH SMOOTH ENTER */}
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -280,27 +230,18 @@ export default function Gallery() {
             </motion.button>
 
             {currentIndex > 0 && (
-              <motion.button
-                whileHover={{ x: -10 }}
-                onClick={(e) => { e.stopPropagation(); handlePrev() }}
-                className="absolute left-6 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all"
-              >
+              <button onClick={(e) => { e.stopPropagation(); handlePrev() }} className="absolute left-6 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all">
                 <ChevronLeft className="w-8 h-8 text-white" />
-              </motion.button>
+              </button>
             )}
-
             {currentIndex < filteredItems.length - 1 && (
-              <motion.button
-                whileHover={{ x: 10 }}
-                onClick={(e) => { e.stopPropagation(); handleNext() }}
-                className="absolute right-6 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all"
-              >
+              <button onClick={(e) => { e.stopPropagation(); handleNext() }} className="absolute right-6 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all">
                 <ChevronRight className="w-8 h-8 text-white" />
-              </motion.button>
+              </button>
             )}
 
             <motion.div
-              layoutId={`image-${selectedImage.id}`}
+              layoutId={`card-${selectedImage.id}`}
               className="relative max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
@@ -311,19 +252,12 @@ export default function Gallery() {
                 height={900}
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#11110F] to-transparent rounded-b-3xl"
-              >
-                <div className="p-8">
-                  <span className="px-4 py-2 bg-[#A6FF57] text-[#11110F] font-bold rounded-full text-sm">
-                    {selectedImage.category.toUpperCase()}
-                  </span>
-                  <h2 className="text-white text-3xl font-bold mt-4">{selectedImage.title}</h2>
-                </div>
-              </motion.div>
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#11110F] to-transparent rounded-b-3xl">
+                <span className="px-4 py-2 bg-[#A6FF57] text-[#11110F] font-bold rounded-full text-sm">
+                  {selectedImage.category.toUpperCase()}
+                </span>
+                <h2 className="text-white text-3xl font-bold mt-4">{selectedImage.title}</h2>
+              </div>
             </motion.div>
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-white font-medium">
