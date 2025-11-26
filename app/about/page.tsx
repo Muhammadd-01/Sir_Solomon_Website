@@ -1,0 +1,412 @@
+import type { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { Award, Target, Eye, Heart, ArrowRight, Quote, Users, BookOpen, Trophy, Calendar } from "lucide-react"
+import { TEACHERS } from "@/lib/constants"
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Sir Solomon's School's 25+ years of educational excellence, our mission, vision, values, and the dedicated team shaping future leaders since 1999.",
+}
+
+export default function About() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-white via-[#f9f9f7] to-[#e8ffe0] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(#11110F 1px, transparent 1px), linear-gradient(90deg, #11110F 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-[#A6FF57]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#A6FF57]/10 rounded-full blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-6 animate-fadeInDown">
+            Our Story
+          </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#11110F] mb-6 animate-fadeInUp">
+            About <span className="text-[#A6FF57]">Sir Solomon's</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto animate-fadeInUp animate-delay-200">
+            Shaping futures through education, character, and unwavering commitment to excellence since 1999
+          </p>
+        </div>
+      </section>
+
+      {/* Our Journey */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-6">
+                Established 1999
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-6">Our Journey</h2>
+              <p className="text-base sm:text-lg text-[#666666] mb-6 leading-relaxed">
+                Founded with a vision to transform education, Sir Solomon's School began its journey in 1999 with just
+                50 students and 5 dedicated teachers. Today, we stand as one of the region's most prestigious
+                educational institutions.
+              </p>
+              <p className="text-base sm:text-lg text-[#666666] mb-6 leading-relaxed">
+                Our founder, Dr. Solomon Abraham, believed that true education goes beyond textbooks. This philosophy
+                continues to guide us as we nurture over 1,200 students annually, preparing them for an ever-evolving
+                world.
+              </p>
+              <p className="text-base sm:text-lg text-[#666666] leading-relaxed">
+                From humble beginnings to state-of-the-art infrastructure spanning 15 acres, our growth reflects our
+                unwavering commitment to educational excellence and holistic student development.
+              </p>
+
+              {/* Timeline highlights */}
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {[
+                  { year: "1999", event: "School Founded" },
+                  { year: "2005", event: "CBSE Affiliation" },
+                  { year: "2015", event: "New Campus" },
+                  { year: "2024", event: "25th Anniversary" },
+                ].map((item) => (
+                  <div key={item.year} className="flex items-center gap-3 p-3 bg-[#f5f5f5] rounded-xl">
+                    <Calendar className="w-5 h-5 text-[#A6FF57]" />
+                    <div>
+                      <p className="font-bold text-[#11110F]">{item.year}</p>
+                      <p className="text-xs text-[#666666]">{item.event}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative order-1 lg:order-2">
+              <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+                <Image src="/historic-school-building-architecture-vintage-educ.jpg" alt="School History" fill className="object-cover" />
+              </div>
+              <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-[#11110F] text-white p-6 sm:p-8 rounded-2xl shadow-xl">
+                <p className="text-4xl sm:text-5xl font-bold text-[#A6FF57]">25+</p>
+                <p className="text-base sm:text-lg">Years of Legacy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 sm:py-24 bg-[#f5f5f5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+              Watch Our Story
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">Experience Sir Solomon's</h2>
+            <p className="text-lg text-[#666666] max-w-2xl mx-auto">
+              Take a virtual tour of our campus and discover what makes us special
+            </p>
+          </div>
+
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer max-w-4xl mx-auto">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+              <Image
+                src="/school-campus-aerial-view-modern-building-green.jpg"
+                alt="Campus Tour Video"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[#11110F]/40 group-hover:bg-[#11110F]/50 transition-colors duration-300" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#A6FF57] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xl">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#11110F] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission, Vision, Values */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+              Our Foundation
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F]">Mission, Vision & Values</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Our Mission",
+                description:
+                  "To provide exceptional education that fosters intellectual growth, develops strong character, and prepares students to become responsible global citizens who contribute positively to society.",
+                color: "#A6FF57",
+              },
+              {
+                icon: Eye,
+                title: "Our Vision",
+                description:
+                  "To be a leading institution recognized globally for academic excellence, innovative teaching methodologies, and developing well-rounded individuals who lead with integrity and compassion.",
+                color: "#11110F",
+              },
+              {
+                icon: Heart,
+                title: "Our Values",
+                description:
+                  "Integrity in all actions, excellence in pursuits, innovation in methods, inclusivity in approach, sustainability in practices, and dedicated service to our community and beyond.",
+                color: "#A6FF57",
+              },
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                className="group bg-[#f5f5f5] p-8 sm:p-10 rounded-3xl border border-[#e5e5e5] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-white"
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: item.color }}
+                >
+                  <item.icon className={`w-8 h-8 ${item.color === "#11110F" ? "text-white" : "text-[#11110F]"}`} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#11110F] mb-4">{item.title}</h3>
+                <p className="text-[#666666] leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 sm:py-24 bg-gradient-to-r from-[#A6FF57] to-[#8fdb44]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              { icon: Users, value: "1,200+", label: "Students Enrolled" },
+              { icon: BookOpen, value: "85+", label: "Expert Faculty" },
+              { icon: Trophy, value: "50+", label: "Awards Won" },
+              { icon: Award, value: "100%", label: "Board Results" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="text-center p-6 sm:p-8 bg-white/20 backdrop-blur-sm rounded-2xl transition-all duration-300 hover:bg-white/30"
+              >
+                <stat.icon className="w-10 h-10 sm:w-12 sm:h-12 text-[#11110F] mx-auto mb-4" />
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-2">{stat.value}</p>
+                <p className="text-[#11110F]/70 font-medium text-sm sm:text-base">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Headmaster's Message */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-[#11110F] to-[#1a1a18]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden">
+                <Image
+                  src="/professional-headmaster-portrait-suit-office-educa.jpg"
+                  alt="Dr. James Smith - Headmaster"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-[#A6FF57] p-4 sm:p-6 rounded-2xl shadow-xl">
+                <p className="font-bold text-[#11110F]">Dr. James Smith</p>
+                <p className="text-sm text-[#11110F]/70">Headmaster</p>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <Quote className="w-12 h-12 sm:w-16 sm:h-16 text-[#A6FF57]/30 mb-6" />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8">
+                From Our Headmaster
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed italic">
+                "At Sir Solomon's, we believe that education transcends the classroom. It is about nurturing young
+                minds, encouraging critical thinking, and instilling values that will guide our students through life."
+              </p>
+              <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed">
+                Our dedicated faculty and modern infrastructure provide the perfect environment for holistic
+                development. We are committed to ensuring that every student discovers their unique potential and
+                develops the skills necessary to contribute meaningfully to society.
+              </p>
+              <p className="text-[#A6FF57] font-bold text-lg sm:text-xl">— Dr. James Smith, Ph.D.</p>
+              <p className="text-gray-400">Headmaster, Sir Solomon's School</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+              Our Team
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">Leadership & Faculty</h2>
+            <p className="text-lg text-[#666666] max-w-2xl mx-auto">
+              Meet the dedicated educators who shape the future of our students
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {TEACHERS.map((teacher, index) => (
+              <div
+                key={teacher.id}
+                className="group bg-[#f5f5f5] rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
+              >
+                <div className="relative h-64 sm:h-72 overflow-hidden">
+                  <Image
+                    src={`/.jpg?height=288&width=300&query=${teacher.name} teacher portrait professional education`}
+                    alt={teacher.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#11110F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-bold text-lg text-[#11110F]">{teacher.name}</h3>
+                  <p className="text-[#A6FF57] font-semibold mb-2">{teacher.subject}</p>
+                  <p className="text-sm text-[#666666]">{teacher.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements */}
+      <section className="py-16 sm:py-24 bg-[#f5f5f5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+              Recognition
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">Awards & Achievements</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { year: "2024", title: "Best School Award", org: "National Education Board" },
+              { year: "2023", title: "STEM Excellence Award", org: "Science Council of India" },
+              { year: "2023", title: "Green School Certification", org: "Environmental Ministry" },
+              { year: "2022", title: "Educational Innovation Award", org: "EdTech Foundation" },
+              { year: "2022", title: "Sports Excellence Trophy", org: "State Sports Authority" },
+              { year: "2021", title: "100% Board Results", org: "CBSE Board" },
+              { year: "2021", title: "Best Infrastructure", org: "Education Times" },
+              { year: "2020", title: "Digital Education Pioneer", org: "Tech in Education Forum" },
+            ].map((achievement, index) => (
+              <div
+                key={`${achievement.year}-${achievement.title}`}
+                className="bg-white p-5 sm:p-6 rounded-2xl border border-[#e5e5e5] text-center transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group"
+              >
+                <Award className="w-8 h-8 sm:w-10 sm:h-10 text-[#A6FF57] mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" />
+                <p className="text-[#A6FF57] font-bold text-lg mb-2">{achievement.year}</p>
+                <h3 className="font-bold text-[#11110F] mb-2 text-sm sm:text-base">{achievement.title}</h3>
+                <p className="text-xs sm:text-sm text-[#666666]">{achievement.org}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Campus Facilities */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+              Infrastructure
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">World-Class Facilities</h2>
+            <p className="text-lg text-[#666666] max-w-2xl mx-auto">
+              State-of-the-art infrastructure designed to enhance learning experiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: "Smart Classrooms",
+                desc: "Interactive boards and digital learning tools in every classroom",
+                query: "modern smart classroom interactive whiteboard students",
+              },
+              {
+                title: "Science Labs",
+                desc: "Fully equipped Physics, Chemistry, and Biology laboratories",
+                query: "school science laboratory equipment modern",
+              },
+              {
+                title: "Computer Center",
+                desc: "200+ computers with high-speed internet and coding facilities",
+                query: "modern computer lab students programming",
+              },
+              {
+                title: "Library",
+                desc: "50,000+ books, digital resources, and quiet study spaces",
+                query: "school library books reading students modern",
+              },
+              {
+                title: "Sports Complex",
+                desc: "Indoor stadium, swimming pool, and outdoor sports fields",
+                query: "school sports complex stadium swimming pool",
+              },
+              {
+                title: "Auditorium",
+                desc: "1000-seat capacity for events, performances, and assemblies",
+                query: "school auditorium stage modern theater",
+              },
+            ].map((facility, index) => (
+              <div
+                key={facility.title}
+                className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden cursor-pointer"
+              >
+                <Image
+                  src={`/.jpg?height=288&width=400&query=${facility.query}`}
+                  alt={facility.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#11110F] via-[#11110F]/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <h3 className="font-bold text-lg sm:text-xl text-white mb-2">{facility.title}</h3>
+                  <p className="text-gray-300 text-sm">{facility.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-24 bg-gradient-to-r from-[#A6FF57] to-[#8fdb44]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-6">Experience Sir Solomon's</h2>
+          <p className="text-lg sm:text-xl text-[#11110F]/80 mb-8 sm:mb-10">
+            Schedule a campus visit and discover why we're the preferred choice for quality education
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="btn-shine bg-[#11110F] text-white px-8 sm:px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+            >
+              Schedule a Visit
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/gallery"
+              className="bg-white text-[#11110F] px-8 sm:px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              View Gallery
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

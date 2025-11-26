@@ -1,0 +1,212 @@
+export const NAVIGATION_ITEMS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Academics", href: "/academics" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "News", href: "/news" },
+  { label: "Contact", href: "/contact" },
+]
+
+export const SCHOOL_INFO = {
+  name: "Sir Solomon's",
+  tagline: "Excellence in Education, Character in Action",
+  mission: "Empowering students with knowledge, skills, and values for a better future",
+  email: "info@sirsolomon.edu",
+  phone: "+1 (555) 123-4567",
+  address: "123 Education Lane, Knowledge City, KC 12345",
+}
+
+export const FEATURES = [
+  {
+    icon: "BookOpen",
+    title: "World-Class Curriculum",
+    description: "Comprehensive and modern curriculum designed for global excellence",
+  },
+  {
+    icon: "Users",
+    title: "Expert Faculty",
+    description: "Highly qualified teachers with international qualifications",
+  },
+  {
+    icon: "Zap",
+    title: "State-of-the-Art Facilities",
+    description: "Modern labs, library, and sports infrastructure",
+  },
+  {
+    icon: "Trophy",
+    title: "Achievements",
+    description: "Consistent academic and co-curricular excellence",
+  },
+  {
+    icon: "Heart",
+    title: "Holistic Development",
+    description: "Focus on academics, sports, arts, and character building",
+  },
+  {
+    icon: "Globe",
+    title: "Global Perspective",
+    description: "International exposure and cultural exchange programs",
+  },
+]
+
+export const STATS = [
+  { label: "Years of Excellence", value: 25 },
+  { label: "Students", value: 1200 },
+  { label: "Faculty Members", value: 85 },
+  { label: "Global Alumni", value: 5000 },
+]
+
+export const TEACHERS = [
+  {
+    id: 1,
+    name: "Dr. Sarah Johnson",
+    subject: "Mathematics",
+    bio: "Ph.D. in Mathematics, 12 years experience",
+    image: "/professional-woman-teacher-mathematics.jpg",
+  },
+  {
+    id: 2,
+    name: "Prof. Michael Chen",
+    subject: "Science",
+    bio: "M.Sc. Physics, 15 years in education",
+    image: "/professional-man-teacher-science.jpg",
+  },
+  {
+    id: 3,
+    name: "Emma Williams",
+    subject: "English Literature",
+    bio: "M.A. English, passionate educator",
+    image: "/professional-woman-teacher-english.jpg",
+  },
+  {
+    id: 4,
+    name: "James Rodriguez",
+    subject: "History & Social Studies",
+    bio: "M.A. History, innovative teaching methods",
+    image: "/professional-man-teacher-history.jpg",
+  },
+]
+
+export const NEWS_ARTICLES = [
+  {
+    id: 1,
+    title: "Annual Science Fair 2024 Success",
+    excerpt: "Our students showcase innovative projects at the annual science fair",
+    date: "November 2024",
+    category: "Events",
+    image: "/science-fair-students-projects.jpg",
+  },
+  {
+    id: 2,
+    title: "Sports Day Champions Announced",
+    excerpt: "Exciting competitions and records broken during the annual sports day",
+    date: "October 2024",
+    category: "Sports",
+    image: "/school-sports-day-competition.jpg",
+  },
+  {
+    id: 3,
+    title: "New STEM Lab Inauguration",
+    excerpt: "State-of-the-art STEM laboratory opens for student research",
+    date: "September 2024",
+    category: "Facilities",
+    image: "/modern-computer-lab-classroom.jpg",
+  },
+]
+
+export const GALLERY_IMAGES = [
+  {
+    id: 1,
+    title: "Main Campus",
+    image: "/school-building-architecture.jpg",
+  },
+  {
+    id: 2,
+    title: "Library",
+    image: "/modern-library-interior.png",
+  },
+  {
+    id: 3,
+    title: "Sports Complex",
+    image: "/school-sports-complex.png",
+  },
+  {
+    id: 4,
+    title: "Science Lab",
+    image: "/modern-science-laboratory.jpg",
+  },
+  {
+    id: 5,
+    title: "Cafeteria",
+    image: "/bustling-school-cafeteria.png",
+  },
+  {
+    id: 6,
+    title: "Playground",
+    image: "/school-playground-outdoor.jpg",
+  },
+]
+
+export const TESTIMONIALS = [
+  {
+    name: "Rajesh Patel",
+    role: "Parent",
+    quote: "Sir Solomon's has transformed my child's academic journey. Outstanding education!",
+    avatar: "/male-avatar-professional.jpg",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Student",
+    quote: "The teachers are amazing and the facilities are world-class. Proud to be a Solomon student!",
+    avatar: "/female-avatar-student.jpg",
+  },
+  {
+    name: "Aditya Kumar",
+    role: "Alumni",
+    quote: "The education I received prepared me perfectly for university. Highly recommend!",
+    avatar: "/male-avatar-young-professional.jpg",
+  },
+]
+
+export const FEES = [
+  { class: "Nursery", semester1: 45000, semester2: 45000 },
+  { class: "Primary (I-III)", semester1: 55000, semester2: 55000 },
+  { class: "Elementary (IV-VI)", semester1: 65000, semester2: 65000 },
+  { class: "Middle (VII-VIII)", semester1: 75000, semester2: 75000 },
+  { class: "Senior (IX-X)", semester1: 85000, semester2: 85000 },
+  { class: "Higher Secondary (XI-XII)", semester1: 95000, semester2: 95000 },
+]
+
+export const PROGRAMS = [
+  {
+    title: "Early Childhood Care",
+    description: "Nursery & Kindergarten programs focusing on play-based learning",
+    grades: "Age 3-5",
+  },
+  {
+    title: "Primary Education",
+    description: "Classes I-III with foundation in core subjects and life skills",
+    grades: "Classes I-III",
+  },
+  {
+    title: "Elementary Program",
+    description: "Comprehensive curriculum in Classes IV-VI",
+    grades: "Classes IV-VI",
+  },
+  {
+    title: "Middle School",
+    description: "Integrated curriculum in Classes VII-VIII",
+    grades: "Classes VII-VIII",
+  },
+  {
+    title: "Secondary Board",
+    description: "CBSE board preparation for Classes IX-X",
+    grades: "Classes IX-X",
+  },
+  {
+    title: "Senior Secondary",
+    description: "Science, Commerce, and Humanities streams for Classes XI-XII",
+    grades: "Classes XI-XII",
+  },
+]
