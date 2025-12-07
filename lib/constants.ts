@@ -9,18 +9,20 @@ export const NAVIGATION_ITEMS = [
 
 export const SCHOOL_INFO = {
   name: "Sir Solomon's",
+  title: "School & College",
   tagline: "Excellence in Education, Character in Action",
   mission: "Empowering students with knowledge, skills, and values for a better future",
-  email: "info@sirsolomon.edu.pk",
-  phone: "+92 (21) 3456-7890",
+  email: "sirsolomonshighersecshool@gmail.com",
+  phone1: "+923332310974",
+  phone2: "+923332255877",
   address: "Plot 123, Block 5, Clifton, Karachi, Pakistan",
 }
 
 export const FEATURES = [
   {
     icon: "BookOpen",
-    title: "World-Class Curriculum",
-    description: "Comprehensive and modern curriculum designed for global excellence",
+    title: "Advanced Curriculum",
+    description: "Comprehensive and modern curriculum designed for excellence",
   },
   {
     icon: "Users",
@@ -29,13 +31,13 @@ export const FEATURES = [
   },
   {
     icon: "Zap",
-    title: "State-of-the-Art Facilities",
+    title: "Enhanced Facilities",
     description: "Modern labs, library, and sports infrastructure",
   },
   {
     icon: "Trophy",
     title: "Achievements",
-    description: "Consistent academic and co-curricular excellence",
+    description: "Consistent academic excellence in board results and co-curricular exercises",
   },
   {
     icon: "Heart",
@@ -59,32 +61,32 @@ export const STATS = [
 export const TEACHERS = [
   {
     id: 1,
-    name: "Dr. Sarah Ahmed",
-    subject: "Mathematics",
-    bio: "Ph.D. in Mathematics, 12 years experience",
+    name: "Muhammad Akmal",
+    subject: "Chemistry, Physics",
+    bio: "Bachelor's of Education, 15 years experience",
     image: "/professional-woman-teacher-mathematics.jpg",
   },
   {
     id: 2,
-    name: "Prof. Michael Chen",
-    subject: "Science",
-    bio: "M.Sc. Physics, 15 years in education",
+    name: "Muhammad Irfan",
+    subject: "PAK Studies, English",
+    bio: "Master's of Economics, 14 years experience",
     image: "/professional-man-teacher-science.jpg",
   },
   {
     id: 3,
-    name: "Fatima Ali",
-    subject: "English Literature",
-    bio: "M.A. English, passionate educator",
+    name: "Muhammad Rizwan",
+    subject: "Mathematics, Computer Science",
+    bio: "Bachlor's of Computer Science, 3 years experience",
     image: "/professional-woman-teacher-english.jpg",
   },
-  {
-    id: 4,
-    name: "James Rodriguez",
-    subject: "History & Social Studies",
-    bio: "M.A. History, innovative teaching methods",
-    image: "/professional-man-teacher-history.jpg",
-  },
+  // {
+  //   id: 4,
+  //   name: "James Rodriguez",
+  //   subject: "History & Social Studies",
+  //   bio: "M.A. History, innovative teaching methods",
+  //   image: "/professional-man-teacher-history.jpg",
+  // },
 ]
 
 export const NEWS_ARTICLES = []
@@ -124,19 +126,19 @@ export const GALLERY_IMAGES = [
 
 export const TESTIMONIALS = [
   {
-    name: "Rajesh Patel",
+    name: "Athar Khan",
     role: "Parent",
     quote: "Sir Solomon's has transformed my child's academic journey. Outstanding education!",
     avatar: "/male-avatar-professional.jpg",
   },
   {
-    name: "Ayesha Khan",
+    name: "Ali Abbas",
     role: "Student",
-    quote: "The teachers are amazing and the facilities are world-class. Proud to be a Solomon student!",
+    quote: "The teachers are amazing and the facilities are Top-Notch. Proud to be a Solomonient!",
     avatar: "/female-avatar-student.jpg",
   },
   {
-    name: "Bilal Ahmed",
+    name: "Muhammad Hassan",
     role: "Alumni",
     quote: "The education I received prepared me perfectly for university. Highly recommend!",
     avatar: "/male-avatar-young-professional.jpg",

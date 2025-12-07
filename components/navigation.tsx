@@ -28,10 +28,11 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-500 ${scrolled
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        scrolled
           ? "bg-white/95 backdrop-blur-lg shadow-lg border-b border-[#e5e5e5]"
           : "bg-white border-b border-[#e5e5e5]"
-        }`}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -40,9 +41,15 @@ export default function Navigation() {
             <div className="w-12 h-12 bg-gradient-to-br from-[#A6FF57] to-[#8fdb44] rounded-xl flex items-center justify-center font-bold text-[#11110F] text-xl transition-all duration-500 group-hover:shadow-lg group-hover:scale-105 group-hover:rotate-3">
               SS
             </div>
+
             <div className="hidden sm:block">
-              <span className="font-bold text-xl text-[#11110F] tracking-tight">{SCHOOL_INFO.name}</span>
-              <p className="text-xs text-[#666666]">Excellence in Education</p>
+              <span className="font-bold text-xl text-[#11110F] tracking-tight block">
+                {SCHOOL_INFO.name}
+              </span>
+
+              <span className="text-xs text-[#666666] block">
+                {SCHOOL_INFO.title}
+              </span>
             </div>
           </Link>
 
@@ -54,8 +61,11 @@ export default function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2.5 rounded-xl font-medium transition-all duration-300 relative group ${isActive ? "text-[#11110F] bg-[#A6FF57]" : "text-[#11110F] hover:bg-[#f5f5f5]"
-                    }`}
+                  className={`px-4 py-2.5 rounded-xl font-medium transition-all duration-300 relative group ${
+                    isActive
+                      ? "text-[#11110F] bg-[#A6FF57]"
+                      : "text-[#11110F] hover:bg-[#f5f5f5]"
+                  }`}
                 >
                   {item.label}
                   {!isActive && (
@@ -85,20 +95,25 @@ export default function Navigation() {
             <div className="relative w-6 h-6">
               <Menu
                 size={24}
-                className={`absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"}`}
+                className={`absolute inset-0 transition-all duration-300 ${
+                  isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
+                }`}
               />
               <X
                 size={24}
-                className={`absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"}`}
+                className={`absolute inset-0 transition-all duration-300 ${
+                  isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
+                }`}
               />
             </div>
           </button>
         </div>
 
-        {/* Mobile Navigation - Enhanced with theme colors */}
+        {/* Mobile Navigation */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
-            }`}
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0"
+          }`}
         >
           <div className="pt-4 space-y-2">
             {filteredNavItems.map((item, index) => {
@@ -107,14 +122,18 @@ export default function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-3 px-4 rounded-xl font-medium transition-all duration-300 ${isActive ? "bg-[#A6FF57] text-[#11110F]" : "text-[#11110F] hover:bg-[#f5f5f5] hover:translate-x-2"
-                    }`}
+                  className={`block py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
+                    isActive
+                      ? "bg-[#A6FF57] text-[#11110F]"
+                      : "text-[#11110F] hover:bg-[#f5f5f5] hover:translate-x-2"
+                  }`}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {item.label}
                 </Link>
               )
             })}
+
             <Link
               href="/admissions"
               className="block mt-4 bg-gradient-to-r from-[#11110F] to-[#333] text-white text-center py-4 px-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg"

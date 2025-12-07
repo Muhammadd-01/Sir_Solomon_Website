@@ -124,7 +124,7 @@ export default function Home() {
               { level: "Primary", grades: "Class I - V", age: "6-10 years", color: "#A6FF57", icon: "📚" },
               { level: "Middle School", grades: "Class VI - VIII", age: "11-13 years", color: "#66D9FF", icon: "🔬" },
               { level: "Secondary", grades: "Class IX - X", age: "14-15 years", color: "#FF9966", icon: "💻" },
-              { level: "Sr. Secondary", grades: "Class XI - XII", age: "16-17 years", color: "#C4A6FF", icon: "🎓" },
+              { level: "Intermediate", grades: "Class XI - XII", age: "16-17 years", color: "#C4A6FF", icon: "🎓" },
               { level: "Special Programs", grades: "All Ages", age: "Enrichment", color: "#FF66A6", icon: "🎨" },
             ].map((program, index) => (
               <div
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl sm:text-5xl font-bold text-[#11110F] mb-6 animate-fadeInDown">Ready to Join Our Family?</h2>
           <p className="text-xl text-[#11110F]/80 mb-10 max-w-2xl mx-auto animate-fadeInUp animate-delay-200">
-            Take the first step towards an exceptional education. Admissions are now open for the 2025-26 academic year.
+            Take the first step towards an exceptional education. Admissions are now open for the current academic year.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animate-delay-400">
             <Link

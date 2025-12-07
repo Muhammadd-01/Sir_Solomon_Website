@@ -65,11 +65,11 @@ export default function Academics() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-6">
-                CBSE Curriculum
+                BSEK Curriculum
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#11110F] mb-6">Our Curriculum</h2>
               <p className="text-lg text-[#666666] mb-8 leading-relaxed">
-                We follow the CBSE curriculum enhanced with international best practices. Our teaching methodology
+                We follow the BSEK curriculum enhanced with international best practices. Our teaching methodology
                 combines traditional values with modern pedagogical approaches.
               </p>
 
@@ -232,7 +232,7 @@ export default function Academics() {
               </p>
               <ul className="space-y-4">
                 {[
-                  "Consistent 100% pass rate in CBSE Board Exams",
+                  "Consistent 100% pass rate in BSEK Board Exams",
                   "Multiple State and National toppers every year",
                   "Strong placement in IITs, NITs, and medical colleges",
                   "International university admissions",

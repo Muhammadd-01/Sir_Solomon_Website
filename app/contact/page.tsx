@@ -219,8 +219,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#11110F] mb-1">Call Us</h3>
-                    <a href={`tel:${SCHOOL_INFO.phone}`} className="text-[#666] hover:text-[#A6FF57] transition-colors duration-300">
-                      {SCHOOL_INFO.phone}
+                    <a href={`tel:${SCHOOL_INFO.phone1}`} className="text-[#666] hover:text-[#A6FF57] transition-colors duration-300">
+                      {SCHOOL_INFO.phone1}
                     </a>
                   </div>
                 </div>

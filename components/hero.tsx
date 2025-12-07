@@ -172,9 +172,9 @@ export default function Hero() {
         <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 animate-fadeInUp animate-delay-500">
           {[
             { icon: GraduationCap, label: "Years of Excellence", value: "25+" },
-            { icon: Users, label: "Students", value: "1200+" },
-            { icon: Award, label: "Expert Faculty", value: "85+" },
-            { icon: Building, label: "Global Alumni", value: "5000+" },
+            { icon: Users, label: "Students", value: "700+" },
+            { icon: Award, label: "Expert Faculty", value: "60+" },
+            { icon: Building, label: "Global Alumni", value: "2500+" },
           ].map((stat) => (
             <div
               key={stat.label}
