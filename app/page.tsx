@@ -79,9 +79,9 @@ export default function Home() {
                 {[
                   "BSEK & Ziauddin Board Affiliated",
                   "100% Board Results",
-                  "State-of-the-art Smart Classrooms",
-                  "Olympic-size Sports Facilities",
-                  "Award-winning STEM Programs",
+                  "Smart Classrooms",
+                  "Library & Lab Facilities",
+                  "Extra Curricular Activities"
                 ].map((item, index) => (
                   <li key={item} className={`flex items-center gap-3 animate-fadeInUp animate-delay-${(index + 1) * 100}`}>
                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">

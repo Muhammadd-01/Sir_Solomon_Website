@@ -20,7 +20,7 @@ export default function FloatingButtons() {
   }
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/15551234567?text=Hello! I'm interested in Sir Solomon's School.", "_blank")
+    window.open("https://wa.me/+923341773438?text=Hello! I'm interested in Sir Solomon's School.", "_blank")
   }
 
   return (
