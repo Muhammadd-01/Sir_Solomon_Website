@@ -7,7 +7,8 @@ import { SCHOOL_INFO } from "@/lib/constants"
 import { motion } from "framer-motion"
 
 export default function Hero() {
-  const text = "School"
+  const text1 = "School &"
+  const text2 = "College"
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-green-50 to-green-100">
@@ -54,34 +55,43 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#11110F] mb-4 sm:mb-6 animate-fadeInUp animate-delay-100 leading-tight">
-              Sir Solomon's
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700 drop-shadow-sm h-[1.2em]">
-                {text.split("").map((char, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.1,
-                      delay: index * 0.1 + 0.5,
-                      ease: "easeIn"
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{
-                    duration: 0.8,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  className="inline-block w-1 h-[0.8em] bg-green-500 ml-1 align-middle"
-                />
-              </span>
-            </h1>
+  Sir Solomon's
+
+  {/* School + College in ONE line */}
+  <span className="inline-block ml-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700 drop-shadow-sm whitespace-nowrap">
+    {text1.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.1,
+          delay: index * 0.1 + 0.4,
+          ease: "easeIn"
+        }}
+      >
+        {char}
+      </motion.span>
+    ))}
+    {/* space between School & College */}
+    &nbsp;
+    {text2.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.1,
+          delay: index * 0.1 + 1.2,
+          ease: "easeIn"
+        }}
+      >
+        {char}
+      </motion.span>
+    ))}
+  </span>
+</h1>
+
 
             {/* Tagline */}
             <p className="text-lg sm:text-xl lg:text-2xl text-[#666666] max-w-xl mx-auto lg:mx-0 mb-4 sm:mb-6 animate-fadeInUp animate-delay-200 font-medium">
@@ -110,6 +120,7 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Right side image */}
           <div className="relative hidden lg:block animate-slideInRight animate-delay-300">
             <div className="relative h-[550px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 group img-zoom">
               <Image
@@ -157,14 +168,14 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Quick Stats - Mobile/Tablet visible, hidden on lg */}
+        {/* Quick Stats */}
         <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 animate-fadeInUp animate-delay-500">
           {[
             { icon: GraduationCap, label: "Years of Excellence", value: "25+" },
             { icon: Users, label: "Students", value: "1200+" },
             { icon: Award, label: "Expert Faculty", value: "85+" },
             { icon: Building, label: "Global Alumni", value: "5000+" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div
               key={stat.label}
               className="bg-white/60 backdrop-blur-md p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-green-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-white group hover:border-green-200"

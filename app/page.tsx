@@ -67,7 +67,7 @@ export default function Home() {
                 About Us
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#11110F] mb-6 leading-tight">
-                Nurturing Future <span className="gradient-text">Leaders</span> Since 1999
+                Nurturing Future <span className="gradient-text">Leaders</span> Since 2003
               </h2>
               <p className="text-lg text-[#666666] mb-8 leading-relaxed">
                 Sir Solomon's School has been at the forefront of educational excellence, combining traditional values
@@ -77,7 +77,8 @@ export default function Home() {
 
               <ul className="space-y-4 mb-10">
                 {[
-                  "CBSE Affiliated with 100% Board Results",
+                  "BSEK & Ziauddin Board Affiliated",
+                  "100% Board Results",
                   "State-of-the-art Smart Classrooms",
                   "Olympic-size Sports Facilities",
                   "Award-winning STEM Programs",

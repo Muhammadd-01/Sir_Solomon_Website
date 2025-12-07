@@ -51,9 +51,9 @@ export const FEATURES = [
 
 export const STATS = [
   { label: "Years of Excellence", value: 25 },
-  { label: "Students", value: 1200 },
-  { label: "Faculty Members", value: 85 },
-  { label: "Global Alumni", value: 5000 },
+  { label: "Students", value: 700 },
+  { label: "Faculty", value: 60 },
+  { label: "Alumni", value: 2500 },
 ]
 
 export const TEACHERS = [
