@@ -213,17 +213,30 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="group p-6 bg-white rounded-2xl border border-[#e5e5e5] hover:border-[#A6FF57] hover:shadow-lg transition-all duration-300 flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#A6FF57] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="text-[#11110F]" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#11110F] mb-1">Call Us</h3>
-                    <a href={`tel:${SCHOOL_INFO.phone1}`} className="text-[#666] hover:text-[#A6FF57] transition-colors duration-300">
-                      {SCHOOL_INFO.phone1}
-                    </a>
-                  </div>
-                </div>
+              <div className="group p-6 bg-white rounded-2xl border border-[#e5e5e5] hover:border-[#A6FF57] hover:shadow-lg transition-all duration-300 flex items-center gap-4">
+  <div className="w-12 h-12 bg-[#A6FF57] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+    <Phone className="text-[#11110F]" size={24} />
+  </div>
+
+  <div>
+    <h3 className="font-bold text-[#11110F] mb-1">Call Us</h3>
+
+    <a
+      href={`tel:${SCHOOL_INFO.phone1}`}
+      className="text-[#666] hover:text-[#A6FF57] transition-colors duration-300 block"
+    >
+      {SCHOOL_INFO.phone1}
+    </a>
+
+    <a
+      href={`tel:${SCHOOL_INFO.phone2}`}
+      className="text-[#666] hover:text-[#A6FF57] transition-colors duration-300 block"
+    >
+      {SCHOOL_INFO.phone2}
+    </a>
+  </div>
+</div>
+
 
                 <div className="group p-6 bg-white rounded-2xl border border-[#e5e5e5] hover:border-[#A6FF57] hover:shadow-lg transition-all duration-300 flex items-start gap-4">
                   <div className="w-12 h-12 bg-[#A6FF57] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
