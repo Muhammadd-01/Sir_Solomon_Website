@@ -350,7 +350,7 @@ export default function Admissions() {
                 <option value="Primary">Primary (I-V)</option>
                 <option value="Middle">Middle (VI-VIII)</option>
                 <option value="Secondary">Secondary (IX-X)</option>
-                <option value="Senior">Sr. Secondary (XI-XII)</option>
+                <option value="Senior">Intermediate (XI-XII)</option>
               </select>
             </div>
 
