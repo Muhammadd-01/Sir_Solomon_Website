@@ -208,7 +208,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Principle's Message */}
+      {/* Principal's Message */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-[#11110F] to-[#1a1a18]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
@@ -216,20 +216,20 @@ export default function About() {
               <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden img-zoom">
                 <Image
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
-                  alt="Dr. James Smith - Principle"
+                  alt="Dr. James Smith - Principal"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[#A6FF57] p-4 sm:p-6 rounded-2xl shadow-xl">
                 <p className="font-bold text-[#11110F]">Sir. Shehzad</p>
-                <p className="text-sm text-[#11110F]/70">Principle</p>
+                <p className="text-sm text-[#11110F]/70">Principal</p>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <Quote className="w-12 h-12 sm:w-16 sm:h-16 text-[#A6FF57]/30 mb-6" />
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8">
-                From Our Principle
+                From Our Principal
               </h2>
               <p className="text-lg sm:text-xl text-gray-300 mb-6 leading-relaxed italic">
                "At Sir Solomon's, we are dedicated to building confident and responsible students by combining knowledge, character development, and strong moral values that serve Pakistan and society."
@@ -240,7 +240,7 @@ export default function About() {
                 develops the skills necessary to contribute meaningfully to society.
               </p>
               <p className="text-[#A6FF57] font-bold text-lg sm:text-xl">— Sir. Shehzad</p>
-              <p className="text-gray-400">Principle, Sir Solomon's School & College</p>
+              <p className="text-gray-400">Principal, Sir Solomon's School & College</p>
             </div>
           </div>
         </div>
