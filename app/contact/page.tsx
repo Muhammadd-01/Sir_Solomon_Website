@@ -269,7 +269,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#11110F] mb-4">
-              Explore Our Campus in <span className="text-[#A6FF57]">Real 3D</span>
+              Explore Our Campus<span className="text-[#A6FF57]"></span>
             </h2>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               Tilt with two fingers • See actual buildings & streets • Zoom & rotate freely
@@ -286,7 +286,7 @@ export default function Contact() {
                 </div>
                 <div className="text-left">
                   <p className="font-bold text-[#11110F] text-xl">Sir Solomon's Secondary School</p>
-                  <p className="text-sm font-medium text-[#444]">Allahwala Town, Karachi</p>
+                  <p className="text-sm font-medium text-[#444]">KDA-Employees, Karachi, Pakistan</p>
                 </div>
               </div>
               <div className="w-1 h-32 bg-gradient-to-b from-[#A6FF57] to-transparent mx-auto mt-4" />
