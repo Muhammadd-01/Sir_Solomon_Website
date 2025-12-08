@@ -159,16 +159,16 @@ export default function Footer() {
                 </div>
                 <span>{SCHOOL_INFO.phone2}</span>
               </a>
-{/* Clickable Address (No Underline, Centered) */}
 <button
   onClick={openInGoogleMaps}
-  className="flex items-center space-x-3 text-gray-400 hover:text-[#A6FF57] transition-all duration-300 group no-underline"
+  className="flex items-center gap-3 text-gray-400 hover:text-[#A6FF57] transition-all duration-300 group no-underline"
 >
   <div className="w-10 h-10 bg-[#222220] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#A6FF57] group-hover:text-[#11110F] transition-all duration-300">
     <MapPin size={18} />
   </div>
-  <span className="text-sm block">
-    Sir Solomon's Secondary School, KDA-Employees, Karachi
+
+  <span className="text-sm leading-normal text-left flex items-center">
+    Sir Solomon's Secondary School, KDA-Employees, Karachi, Pakistan
   </span>
 </button>
 

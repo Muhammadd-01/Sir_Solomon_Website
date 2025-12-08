@@ -244,7 +244,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#11110F] mb-1">Visit Us</h3>
-                    <p className="text-[#666]">Sir Solomon's Secondary School<br />Block 7, Clifton, Karachi, Pakistan</p>
+                    <p className="text-[#666]">Sir Solomon's Secondary School & College<br />KDA-Employees, Karachi, Pakistan</p>
                   </div>
                 </div>
 
@@ -254,8 +254,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#11110F] mb-1">Office Hours</h3>
-                    <p className="text-[#666]">Mon - Fri: 8:00 AM - 5:00 PM</p>
-                    <p className="text-[#666]">Saturday: 9:00 AM - 1:00 PM</p>
+                    <p className="text-[#666]">Mon - Sat: 8:00 AM - 5:00 PM</p>
+                    <p className="text-[#666]">Friday: 8:00 AM - 1:00 PM</p>
                   </div>
                 </div>
               </div>
