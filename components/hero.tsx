@@ -173,8 +173,8 @@ export default function Hero() {
           {[
             { icon: GraduationCap, label: "Years of Excellence", value: "25+" },
             { icon: Users, label: "Students", value: "700+" },
-            { icon: Award, label: "Expert Faculty", value: "60+" },
-            { icon: Building, label: "Global Alumni", value: "2500+" },
+            { icon: Award, label: "Faculty", value: "60+" },
+            { icon: Building, label: "Alumni", value: "2500+" },
           ].map((stat) => (
             <div
               key={stat.label}
