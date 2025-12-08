@@ -180,11 +180,11 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#222220]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-center items-center gap-4">
+          <p className="text-gray-500 text-sm text-center">
             © 2025 {SCHOOL_INFO.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-gray-500">
+          {/* <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-gray-500">
             <Link href="#" className="hover:text-[#A6FF57] transition-colors duration-300">
               Privacy Policy
             </Link>
@@ -194,7 +194,7 @@ export default function Footer() {
             <Link href="#" className="hover:text-[#A6FF57] transition-colors duration-300">
               Sitemap
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
