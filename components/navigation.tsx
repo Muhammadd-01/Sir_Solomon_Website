@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { NAVIGATION_ITEMS, SCHOOL_INFO } from "@/lib/constants"
+import Image from "next/image"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,22 +37,31 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#A6FF57] to-[#8fdb44] rounded-xl flex items-center justify-center font-bold text-[#11110F] text-xl transition-all duration-500 group-hover:shadow-lg group-hover:scale-105 group-hover:rotate-3">
-              SS
-            </div>
+{/* Logo */}
+<Link href="/" className="flex items-center space-x-3 group">
+  {/* Logo Image */}
+  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 transition-all duration-500 group-hover:shadow-lg group-hover:scale-105 group-hover:rotate-3">
+    <Image
+      src="/sir-solomons-logo.jpeg"   // Replace with your actual logo path
+      alt="School Logo"
+      width={48}
+      height={48}
+      className="object-cover w-full h-full"
+    />
+  </div>
 
-            <div className="hidden sm:block">
-              <span className="font-bold text-xl text-[#11110F] tracking-tight block">
-                {SCHOOL_INFO.name}
-              </span>
+  {/* School Name & Title */}
+  <div className="hidden sm:block">
+    <span className="font-bold text-xl text-[#11110F] tracking-tight block">
+      {SCHOOL_INFO.name}
+    </span>
+    <span className="text-xs text-[#666666] block">
+      {SCHOOL_INFO.title}
+    </span>
+  </div>
+</Link>
 
-              <span className="text-xs text-[#666666] block">
-                {SCHOOL_INFO.title}
-              </span>
-            </div>
-          </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
