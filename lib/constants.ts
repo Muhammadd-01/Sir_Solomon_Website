@@ -129,7 +129,7 @@ export const TESTIMONIALS = [
     name: "Athar Khan",
     role: "Parent",
     quote: "Sir Solomon's has transformed my child's academic journey. Outstanding education!",
-    avatar: "/male-avatar-professional.jpg",
+    avatar: "/athar-khan-pic.jpeg",
   },
   {
     name: "Ali Abbas",
@@ -141,7 +141,7 @@ export const TESTIMONIALS = [
     name: "Muhammad Hassan",
     role: "Alumni",
     quote: "The education I received prepared me perfectly for university. Highly recommend!",
-    avatar: "/male-avatar-young-professional.jpg",
+    avatar: "/muhammad-hassan-pic.jpeg",
   },
 ]
 

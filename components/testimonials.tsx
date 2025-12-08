@@ -58,29 +58,37 @@ export default function Testimonials() {
               ))}
             </div>
 
-            {/* Testimonial Content */}
-            <div
-              className={`transition-all duration-500 ${isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"}`}
-            >
-              <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed mb-8 sm:mb-10 pl-6 sm:pl-8">
-                "{TESTIMONIALS[current].quote}"
-              </p>
+           {/* Testimonial Content */}
+<div
+  className={`transition-all duration-500 ${
+    isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+  }`}
+>
+  <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed mb-8 sm:mb-10 pl-6 sm:pl-8">
+    "{TESTIMONIALS[current].quote}"
+  </p>
 
-              <div className="flex items-center space-x-4 pl-6 sm:pl-8">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#A6FF57] overflow-hidden relative ring-4 ring-[#A6FF57]/20">
-                  <Image
-                    src={`/.jpg?height=64&width=64&query=${TESTIMONIALS[current].name} portrait professional`}
-                    alt={TESTIMONIALS[current].name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-bold text-white text-base sm:text-lg">{TESTIMONIALS[current].name}</p>
-                  <p className="text-[#A6FF57] text-sm sm:text-base">{TESTIMONIALS[current].role}</p>
-                </div>
-              </div>
-            </div>
+  <div className="flex items-center space-x-4 pl-6 sm:pl-8">
+    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#A6FF57] overflow-hidden relative ring-4 ring-[#A6FF57]/20">
+      <Image
+        src={TESTIMONIALS[current].avatar}  // <-- Avatar added here
+        alt={TESTIMONIALS[current].name}
+        fill
+        className="object-cover"
+      />
+    </div>
+
+    <div>
+      <p className="font-bold text-white text-base sm:text-lg">
+        {TESTIMONIALS[current].name}
+      </p>
+      <p className="text-[#A6FF57] text-sm sm:text-base">
+        {TESTIMONIALS[current].role}
+      </p>
+    </div>
+  </div>
+</div>
+
 
             {/* Navigation */}
             <div className="flex flex-col sm:flex-row justify-between items-center mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#333] gap-4">
