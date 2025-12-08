@@ -272,7 +272,7 @@ export default function Contact() {
               Explore Our Campus<span className="text-[#A6FF57]"></span>
             </h2>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
-              Tilt with two fingers • See actual buildings & streets • Zoom & rotate freely
+              {/* Tilt with two fingers • See actual buildings & streets • Zoom & rotate freely */}
             </p>
           </div>
 
@@ -315,9 +315,9 @@ export default function Contact() {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-700 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-700 text-center">
                   <p className="text-white text-3xl font-bold bg-[#11110F]/90 px-10 py-6 rounded-3xl backdrop-blur-sm border border-white/20">
-                    Click for Full 3D Experience
+                    Click for Full Experience
                   </p>
-                  <p className="text-white/80 mt-3 text-sm">Two fingers to tilt on mobile</p>
+                  {/* <p className="text-white/80 mt-3 text-sm">Two fingers to tilt on mobile</p> */}
                 </div>
               </div>
 
@@ -336,9 +336,9 @@ export default function Contact() {
               </button>
             </div>
 
-            <p className="text-center text-sm text-[#888] mt-6">
+            {/* <p className="text-center text-sm text-[#888] mt-6">
               Pro Tip: Scroll to zoom • Drag to rotate • Two fingers to tilt
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
