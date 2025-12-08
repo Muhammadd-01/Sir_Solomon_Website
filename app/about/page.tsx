@@ -246,44 +246,51 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
-              Our Team
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">Leadership & Faculty</h2>
-            <p className="text-lg text-[#666666] max-w-2xl mx-auto">
-              Meet the dedicated educators who shape the future of our students
-            </p>
-          </div>
+    {/* Leadership Team */}
+<section className="py-16 sm:py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12 sm:mb-16">
+      <span className="inline-block px-4 py-1.5 bg-[#A6FF57]/20 text-[#11110F] rounded-full text-sm font-semibold mb-4">
+        Our Team
+      </span>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#11110F] mb-4">
+        Leadership & Faculty
+      </h2>
+      <p className="text-lg text-[#666666] max-w-2xl mx-auto">
+        Meet the dedicated educators who shape the future of our students
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {TEACHERS.map((teacher, index) => (
-              <div
-                key={teacher.id}
-                className="group bg-[#f5f5f5] rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
-              >
-                <div className="relative h-64 sm:h-72 overflow-hidden">
-                  <Image
-                    src={teacher.image || `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop`}
-                    alt={teacher.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#11110F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <h3 className="font-bold text-lg text-[#11110F]">{teacher.name}</h3>
-                  <p className="text-[#A6FF57] font-semibold mb-2">{teacher.subject}</p>
-                  <p className="text-sm text-[#666666]">{teacher.bio}</p>
-                </div>
-              </div>
-            ))}
+    {/* Cards Centered */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center">
+      {TEACHERS.map((teacher) => (
+        <div
+          key={teacher.id}
+          className="group bg-[#f5f5f5] rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-2 w-full"
+        >
+          <div className="relative h-64 sm:h-72 overflow-hidden">
+            <Image
+              src={
+                teacher.image ||
+                `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop`
+              }
+              alt={teacher.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#11110F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+          <div className="p-5 sm:p-6">
+            <h3 className="font-bold text-lg text-[#11110F]">{teacher.name}</h3>
+            <p className="text-[#A6FF57] font-semibold mb-2">{teacher.subject}</p>
+            <p className="text-sm text-[#666666]">{teacher.bio}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Achievements */}
       {/* <section className="py-16 sm:py-24 bg-[#f5f5f5]">
